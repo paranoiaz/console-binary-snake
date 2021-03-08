@@ -34,13 +34,14 @@ def keyboard_event(key):
     global PRESSED
     if not PRESSED:
         # limiting to one press per cycle
-        if key.char in KEYSTROKES:
-            if not snake.direction:
-                snake.direction = key.char
-                return
-            if (key.char != snake.direction) and (OPPOSITES[snake.direction] != key.char):
-                snake.direction = key.char
-                PRESSED = True
+        if hasattr(key, "char"):
+            if key.char in KEYSTROKES:
+                if not snake.direction:
+                    snake.direction = key.char
+                    return
+                if (key.char != snake.direction) and (OPPOSITES[snake.direction] != key.char):
+                    snake.direction = key.char
+                    PRESSED = True
 
 
 def check_border():
