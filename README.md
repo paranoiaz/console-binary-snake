@@ -4,6 +4,7 @@ A binary themed snake game made for the terminal. Works for both Windows and Lin
 **Dependencies**
 ```
 pynput
+pyyaml
 colorama
 ```
 
